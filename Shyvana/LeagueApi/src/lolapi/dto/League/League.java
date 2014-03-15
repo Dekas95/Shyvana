@@ -1,9 +1,9 @@
 package lolapi.dto.League;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class League {
-	private	ArrayList<LeagueItem> entries; //
+	private	List<LeagueItem> entries; //
 	private String name;	//	
 	private String participantId;		
 	private	String queue;	//	 (legal values: RANKED_SOLO_5x5, RANKED_TEAM_3x3, RANKED_TEAM_5x5)
@@ -11,7 +11,7 @@ public class League {
 	/**
 	 * @return the entries
 	 */
-	public ArrayList<LeagueItem> getEntries() {
+	public List<LeagueItem> getEntries() {
 		return entries;
 	}
 	/**

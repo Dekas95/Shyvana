@@ -48,6 +48,16 @@ public class C {
 	{	
 		return "/api/lol/" + region.getName() + "/" + Version.teamQVersion  + "/team/by-summoner/" + summonerId + "?";
 	}
+	
+	public static String staticDataQuery(Region region, String type, Object id)
+	{	
+		return "/api/lol/static-data/" + region.getName() + "/" + Version.staticdataQVerison  + "/" + type + "/" + id.toString() + "?";
+	}
+	public static String staticDataQuery(Region region, String type)
+	{	
+		return "/api/lol/static-data/" + region.getName() + "/" + Version.staticdataQVerison  + "/" + type  + "?";
+	}
+	
 	private static String arrayToString(String[] summonerNames) {
 		String ids = "";
 		for(int i=0; i<summonerNames.length;i++)

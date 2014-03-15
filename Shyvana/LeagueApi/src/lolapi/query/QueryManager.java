@@ -33,6 +33,7 @@ public class QueryManager {
 	            	response += line;    	
 	            }
 	            jsonx = new JsonParser().parse(response);
+	            System.out.println(jsonx);
 	            rd.close();
 	        } catch (Exception e) {
 	            e.printStackTrace();

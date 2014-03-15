@@ -7,4 +7,5 @@ public class Version {
 	public static String leagueQVersion = "v2.3";
 	public static String statsQVersion = "v1.2";
 	public static String teamQVersion = "v2.2";
+	public static String staticdataQVerison = "v1";
 }

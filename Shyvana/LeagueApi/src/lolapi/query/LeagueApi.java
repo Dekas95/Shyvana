@@ -16,6 +16,17 @@ import lolapi.dto.Summoner.MasteryPages;
 import lolapi.dto.Summoner.RunePages;
 import lolapi.dto.Summoner.Summoner;
 import lolapi.dto.Team.Team;
+import lolapi.dto.staticdata.Champion.Champion;
+import lolapi.dto.staticdata.Champion.ChampionList;
+import lolapi.dto.staticdata.Item.Item;
+import lolapi.dto.staticdata.Item.ItemList;
+import lolapi.dto.staticdata.Mastery.Mastery;
+import lolapi.dto.staticdata.Mastery.MasteryList;
+import lolapi.dto.staticdata.Realm.Realm;
+import lolapi.dto.staticdata.Rune.Rune;
+import lolapi.dto.staticdata.Rune.RuneList;
+import lolapi.dto.staticdata.SummonerSpell.SummonerSpell;
+import lolapi.dto.staticdata.SummonerSpell.SummonerSpellList;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -95,4 +106,84 @@ public class LeagueApi {
         RecentGames mygg = new Gson().fromJson(x, RecentGames.class);
         return mygg;
 	}
+	
+	/* Static Data */
+	/**
+	 * Returns a champion with given id.
+	 * */
+	public Champion getStaticChampion(long id, Region region)
+	{
+		JsonElement x = qm.sendQuery(C.staticDataQuery(region, "champion", id));
+        Champion mygg = new Gson().fromJson(x, Champion.class);
+        return mygg;
+	}
+	/**
+	 * Returns whole champion list.
+	 * */
+	public ChampionList getStaticChampionList(Region region)
+	{
+		JsonElement x = qm.sendQuery(C.staticDataQuery(region, "champion"));
+        ChampionList mygg = new Gson().fromJson(x, ChampionList.class);
+        return mygg;
+	}
+	
+	public Item getStaticItem(long id, Region region)
+	{
+		JsonElement x = qm.sendQuery(C.staticDataQuery(region, "item", id));
+		Item mygg = new Gson().fromJson(x, Item.class);
+        return mygg;
+	}
+	public ItemList getStaticItemList(Region region)
+	{
+		JsonElement x = qm.sendQuery(C.staticDataQuery(region, "item"));
+		ItemList mygg = new Gson().fromJson(x, ItemList.class);
+        return mygg;
+	}
+	
+	public Mastery getStaticMastery(long id, Region region)
+	{
+		JsonElement x = qm.sendQuery(C.staticDataQuery(region, "mastery", id));
+		Mastery mygg = new Gson().fromJson(x, Mastery.class);
+        return mygg;
+	}
+	public MasteryList getStaticMasteryList(Region region)
+	{
+		JsonElement x = qm.sendQuery(C.staticDataQuery(region, "mastery"));
+		MasteryList mygg = new Gson().fromJson(x, MasteryList.class);
+        return mygg;
+	}
+	
+	public Realm getStaticRealm(Region region)
+	{
+		JsonElement x = qm.sendQuery(C.staticDataQuery(region, "realm"));
+		Realm mygg = new Gson().fromJson(x, Realm.class);
+        return mygg;
+	}
+	
+	public Rune getStaticRune(long id, Region region)
+	{
+		JsonElement x = qm.sendQuery(C.staticDataQuery(region, "rune", id));
+		Rune mygg = new Gson().fromJson(x, Rune.class);
+        return mygg;
+	}
+	public RuneList getStaticRuneList(Region region)
+	{
+		JsonElement x = qm.sendQuery(C.staticDataQuery(region, "rune"));
+		RuneList mygg = new Gson().fromJson(x, RuneList.class);
+        return mygg;
+	}
+	
+	public SummonerSpell getStaticSummonerSpell(String id, Region region)
+	{
+		JsonElement x = qm.sendQuery(C.staticDataQuery(region, "summoner-spell", id));
+		SummonerSpell mygg = new Gson().fromJson(x, SummonerSpell.class);
+        return mygg;
+	}
+	public SummonerSpellList getStaticSummonerSpellList(Region region)
+	{
+		JsonElement x = qm.sendQuery(C.staticDataQuery(region, "summoner-spell"));
+		SummonerSpellList mygg = new Gson().fromJson(x, SummonerSpellList.class);
+        return mygg;
+	}
+	
 }
