@@ -1,10 +1,10 @@
-#LeagueAPI
+#Shyvana - Java League Library
 
-League API is completely free tool for non-profit purposes. League API is a simple way to access League of Legends API.
+Shyvana is completely free tool for non-profit purposes. Shyvana is a simple way to access League of Legends API.
 
 ##How to Install
 
-Download the latest JAR file from here. 
+Download the latest JAR file -> https://www.dropbox.com/s/8t8hy7wo5an06mf/Shyvana-v1.1.0.jar
 
 If you are using eclipse,
 
@@ -20,17 +20,32 @@ If you are using eclipse,
 		String[] names = new String[]{"Dyrus"};
 		int id = 5908;
 		long[] ids = new long[]{5908};
+		Region region = Region.NA;
+		Season season = Season.SEASON_4;
 		
-			Map<String, Summoner>	a = api.getSummonerByName(names, Region.NA);
-			RecentGames				b = api.getGame(id, Region.NA);
-			List<League> 			c = api.getLeague(id, Region.NA);
-		Map<String, MasteryPages> 	d = api.getMasteries(ids, Region.NA);
-			Map<String, RunePages> 	e = api.getRunes(ids, Region.NA);
-			RankedStats 			f = api.getStatsRanked(id, Region.NA, Season.SEASON_4);
-			PlayerStatsSummaryList 	h = api.getStatsSummary(id, Region.NA, Season.SEASON_4);
-			Map<String, Summoner> 	g = api.getSummonerById(ids, Region.NA);
-			Map<String, Summoner> 	i = api.getSummonerByName(names, Region.NA);
-						List<Team> 	j = api.getTeam(id, Region.NA);
+			Map<String, Summoner>	a = api.getSummonerByName(names, region);
+			RecentGames				b = api.getGame(id, region);
+			List<League> 			c = api.getLeague(id, region);
+		Map<String, MasteryPages> 	d = api.getMasteries(ids, region);
+			Map<String, RunePages> 	e = api.getRunes(ids, region);
+			RankedStats 			f = api.getStatsRanked(id, region, season);
+			PlayerStatsSummaryList 	h = api.getStatsSummary(id, region, season);
+			Map<String, Summoner> 	g = api.getSummonerById(ids, region);
+			Map<String, Summoner> 	i = api.getSummonerByName(names, region);
+						List<Team> 	j = api.getTeam(id, region);
+						
+						/* Shyvana v1.1.0 Static Data Available */
+						   Champion k = api.getStaticChampion(1, region);
+					   ChampionList l = api.getStaticChampionList(region);
+							   Item m = api.getStaticItem(3169, region);
+						   ItemList n = api.getStaticItemList(region);
+						    Mastery o = api.getStaticMastery(4353, region);
+						MasteryList p = api.getStaticMasteryList(region);
+							  Realm q = api.getStaticRealm(region);
+							   Rune r = api.getStaticRune(5235, region);
+						   RuneList s = api.getStaticRuneList(region);
+					  SummonerSpell t = api.getStaticSummonerSpell("SummonerBoost", region);
+				  SummonerSpellList u = api.getStaticSummonerSpellList(region);
 
 ```
 
@@ -43,9 +58,14 @@ If you are using eclipse,
 | Stats         | 1.2           |
 | Summoner      | 1.3           |
 | Team          | 2.2           |
+| Static-Data   | 1.0           |
 
 
 ###Future Plans
+
+Highest Priority: 
++ League Query Type will be updated with extra features.
+
+Least Priority:
 + Multiple api_key management
 + Better exception handling
-
