@@ -185,5 +185,13 @@ public class LeagueApi {
 		SummonerSpellList mygg = new Gson().fromJson(x, SummonerSpellList.class);
         return mygg;
 	}
+
+	public QueryManager getQm() {
+		return qm;
+	}
+
+	public void setQm(QueryManager qm) {
+		this.qm = qm;
+	}
 	
 }

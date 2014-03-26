@@ -10,6 +10,9 @@ import com.google.gson.JsonParser;
 
 public class QueryManager {
 	private String apiKey;
+	private URLConnection connection;
+	private boolean doOutput = true;
+
 	public QueryManager(String apiKey)
 	{
 		this.apiKey = apiKey;
@@ -23,11 +26,12 @@ public class QueryManager {
 	            URL url = new URL("https://prod.api.pvp.net" + 
 	            		  query + 
 				  		 "&api_key=" + getValidAPIkey());
-	            URLConnection conn = url.openConnection();
-	            conn.setDoOutput(true);
-
+	            connection = url.openConnection();
+	            if(doOutput)
+	            	connection.setDoOutput(doOutput);
+	            
 	            // Get the response
-	            BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+	            BufferedReader rd = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 	            String line;
 	            while ((line = rd.readLine()) != null) {
 	            	response += line;    	
@@ -39,8 +43,7 @@ public class QueryManager {
 	            e.printStackTrace();
 	        }
 			return jsonx;
-	}
-
+	}	
 	private String getValidAPIkey() {
 		return apiKey;
 	}
@@ -52,4 +55,17 @@ public class QueryManager {
 	public void setApiKey(String apiKey) {
 		this.apiKey = apiKey;
 	}
+	public URLConnection getConnection() {
+		return connection;
+	}
+	public void setConnection(URLConnection connection) {
+		this.connection = connection;
+	}
+	public boolean isDoOutput() {
+		return doOutput;
+	}
+	public void setDoOutput(boolean doOutput) {
+		this.doOutput = doOutput;
+	}
+
 }
