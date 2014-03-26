@@ -4,7 +4,7 @@ Shyvana is completely free tool for non-profit purposes. Shyvana is a simple way
 
 ##How to Install
 
-Download the latest JAR file -> https://www.dropbox.com/s/8t8hy7wo5an06mf/Shyvana-v1.1.0.jar
+Download the latest JAR file -> https://github.com/shyos/Shyvana/releases
 
 If you are using eclipse,
 
