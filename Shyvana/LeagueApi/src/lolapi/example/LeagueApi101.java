@@ -31,8 +31,8 @@ import lolapi.query.LeagueApi;
 public class LeagueApi101 {
 	public static void main(String[] args) throws ParseException, IOException {
 
-		LeagueApi api = new LeagueApi("YOUR_API_KEY_HERE");
-		
+		LeagueApi api = new LeagueApi("5fe6ede1-90ba-4a44-9035-d9cb37067b48");
+		api.getQm().setDoOutput(false);
 		String[] names = new String[]{"Dyrus"};
 		int id = 5908;
 		long[] ids = new long[]{5908};
