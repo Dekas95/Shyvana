@@ -1,3 +1,5 @@
+#(5 Aug 2014) CAREFUL: This library is OUTDATED. It will be updated soon.
+
 #Shyvana - Java League Library
 
 Shyvana is completely free tool for non-profit purposes. Shyvana is a simple way to access League of Legends API.
