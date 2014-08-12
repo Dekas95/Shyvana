@@ -10,7 +10,8 @@ public enum Region {
     NA ("na"),
     OCE ("oce"),
     RU ("ru"),
-    TR ("tr");
+    TR ("tr"),
+    GLOBAL("global");
 
     private String name = null;
 

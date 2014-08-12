@@ -3,8 +3,7 @@ package lolapi.dto.League;
 public class MiniSeries {
 	private int losses;	
 	private String progress;	
-	private int target;	
-	private long timeLeftToPlayMillis;	
+	private int target;		
 	private int wins;
 	/**
 	 * @return the losses
@@ -23,12 +22,6 @@ public class MiniSeries {
 	 */
 	public int getTarget() {
 		return target;
-	}
-	/**
-	 * @return the timeLeftToPlayMillis
-	 */
-	public long getTimeLeftToPlayMillis() {
-		return timeLeftToPlayMillis;
 	}
 	/**
 	 * @return the wins

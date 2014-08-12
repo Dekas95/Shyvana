@@ -1,20 +1,18 @@
 package lolapi.dto.League;
 
 public class LeagueItem {
+	private String division;
 	private boolean isFreshBlood;	
 	private boolean isHotStreak;	
 	private boolean isInactive;	
 	private boolean isVeteran;	
-	private long lastPlayed;	
-	private String leagueName;	
 	private int leaguePoints;	
 	private MiniSeries miniSeries;	
 	private String playerOrTeamId;	
-	private String playerOrTeamName;	
-	private String queueType;	
-	private String rank;	
-	private String tier;	
+	private String playerOrTeamName;		
 	private int wins;
+
+
 	/**
 	 * @return the isFreshBlood
 	 */
@@ -38,18 +36,6 @@ public class LeagueItem {
 	 */
 	public boolean isVeteran() {
 		return isVeteran;
-	}
-	/**
-	 * @return the lastPlayed
-	 */
-	public long getLastPlayed() {
-		return lastPlayed;
-	}
-	/**
-	 * @return the leagueName
-	 */
-	public String getLeagueName() {
-		return leagueName;
 	}
 	/**
 	 * @return the leaguePoints
@@ -76,28 +62,22 @@ public class LeagueItem {
 		return playerOrTeamName;
 	}
 	/**
-	 * @return the queueType
-	 */
-	public String getQueueType() {
-		return queueType;
-	}
-	/**
-	 * @return the rank
-	 */
-	public String getRank() {
-		return rank;
-	}
-	/**
-	 * @return the tier
-	 */
-	public String getTier() {
-		return tier;
-	}
-	/**
 	 * @return the wins
 	 */
 	public int getWins() {
 		return wins;
+	}
+	/**
+	 * @return the division
+	 */
+	public String getDivision() {
+		return division;
+	}
+	/**
+	 * @param division the division to set
+	 */
+	public void setDivision(String division) {
+		this.division = division;
 	}
 	
 	

@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.util.List;
 import java.util.Map;
 
+import lolapi.dto.LeagueType;
 import lolapi.dto.Region;
 import lolapi.dto.Season;
 import lolapi.dto.Game.RecentGames;
@@ -31,36 +32,49 @@ import lolapi.query.LeagueApi;
 public class LeagueApi101 {
 	public static void main(String[] args) throws ParseException, IOException {
 
-		LeagueApi api = new LeagueApi("5fe6ede1-90ba-4a44-9035-d9cb37067b48");
-		api.getQm().setDoOutput(false);
+		LeagueApi api = new LeagueApi("YOUR_API_KEY_HERE");
+		
 		String[] names = new String[]{"Dyrus"};
 		int id = 5908;
-		long[] ids = new long[]{5908};
+		String[] ids = new String[]{"5908"};
+		String[] teamIds = new String[]{"TEAM-1c3a53f0-fbd4-11e3-9c89-782bcb4d1861"};
 		Region region = Region.NA;
 		Season season = Season.SEASON_4;
+		LeagueType leagueType = LeagueType.T5;
+		int summonerSpellId = 1;
 		
-			Map<String, Summoner>	a = api.getSummonerByName(names, region);
-			RecentGames				b = api.getGame(id, region);
-			List<League> 			c = api.getLeague(id, region);
-		Map<String, MasteryPages> 	d = api.getMasteries(ids, region);
-			Map<String, RunePages> 	e = api.getRunes(ids, region);
-			RankedStats 			f = api.getStatsRanked(id, region, season);
-			PlayerStatsSummaryList 	h = api.getStatsSummary(id, region, season);
-			Map<String, Summoner> 	g = api.getSummonerById(ids, region);
-			Map<String, Summoner> 	i = api.getSummonerByName(names, region);
-						List<Team> 	j = api.getTeam(id, region);
-						   Champion k = api.getStaticChampion(1, region);
-					   ChampionList l = api.getStaticChampionList(region);
-							   Item m = api.getStaticItem(3169, region);
-						   ItemList n = api.getStaticItemList(region);
-						    Mastery o = api.getStaticMastery(4353, region);
-						MasteryList p = api.getStaticMasteryList(region);
-							  Realm q = api.getStaticRealm(region);
-							   Rune r = api.getStaticRune(5235, region);
-						   RuneList s = api.getStaticRuneList(region);
-					  SummonerSpell t = api.getStaticSummonerSpell("SummonerBoost", region);
-				  SummonerSpellList u = api.getStaticSummonerSpellList(region);
-										
+		
+				  Map<String, Summoner> a = api.getSummonerByName(names, region);
+							RecentGames	b = api.getGame(id, region);
+			
+			Map<String, List<League>> 	c1 = api.getLeagueBySummonerId(ids, region);
+			Map<String, List<League>> 	c2 = api.getLeagueEntryBySummonerId(ids, region);
+			Map<String, List<League>> 	c3 = api.getLeagueByTeamId(teamIds, region);
+			Map<String, List<League>> 	c4 = api.getLeagueEntryByTeamId(teamIds, region);
+			 				   League 	c5 = api.getLeagueChallengers(region, leagueType);
+
+			Map<String, MasteryPages> 	d = api.getMasteries(ids, region);
+				Map<String, RunePages> 	e = api.getRunes(ids, region);
+				RankedStats 			f = api.getStatsRanked(id, region, season);
+				PlayerStatsSummaryList 	h = api.getStatsSummary(id, region, season);
+				Map<String, Summoner> 	g = api.getSummonerById(ids, region);
+				Map<String, Summoner> 	i = api.getSummonerByName(names, region);
+			
+				Map<String, List<Team>> j1 = api.getTeamBySummonerId(ids, region);
+					  Map<String, Team> j2 = api.getTeamByTeamId(teamIds, region);
+			      
+					  			Champion k = api.getStaticChampion(1, region);
+					  		ChampionList l = api.getStaticChampionList(region);
+							   		Item m = api.getStaticItem(3169, region);
+							   	ItemList n = api.getStaticItemList(region);
+							   	 Mastery o = api.getStaticMastery(4353, region);
+							 MasteryList p = api.getStaticMasteryList(region);
+							  	   Realm q = api.getStaticRealm(region);
+							  	    Rune r = api.getStaticRune(5235, region);
+							  	RuneList s = api.getStaticRuneList(region);
+						   SummonerSpell t = api.getStaticSummonerSpell(summonerSpellId, region);
+					   SummonerSpellList u = api.getStaticSummonerSpellList(region);
+									
 									
 	}	
 }

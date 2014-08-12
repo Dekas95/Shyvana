@@ -5,27 +5,29 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
+import lolapi.dto.Region;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
 public class QueryManager {
 	private String apiKey;
 	private URLConnection connection;
-	private boolean doOutput = true;
+	private boolean doOutput = false;
 
 	public QueryManager(String apiKey)
 	{
 		this.apiKey = apiKey;
 	}
-	public JsonElement sendQuery(String query)
+	public JsonElement sendQuery(Region reigon, String query)
 	{
 		 JsonElement jsonx = null;
 		 String response = "";
 			try {
 				// Send data
-	            URL url = new URL("https://prod.api.pvp.net" + 
+	            URL url = new URL("https://"+ reigon.getName() +".api.pvp.net" + 
 	            		  query + 
-				  		 "&api_key=" + getValidAPIkey());
+				  		 "api_key=" + getValidAPIkey());
 	            connection = url.openConnection();
 	            if(doOutput)
 	            	connection.setDoOutput(doOutput);
