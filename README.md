@@ -1,10 +1,10 @@
-#WARNING: I stop developing and supporting this repo for a while now. I don't know if I will continue to work on this any time soon.
+WARNING: I stop developing and supporting this repo for a while now. I don't know if I will continue to work on this any time soon.
 
-#Shyvana - Java League Library
+# Shyvana - Java League Library
 
 Shyvana is completely free tool for non-profit purposes. Shyvana is a simple way to access League of Legends API.
 
-##How to Install
+## How to Install
 
 Download the latest JAR file -> https://github.com/shyos/Shyvana/releases
 
